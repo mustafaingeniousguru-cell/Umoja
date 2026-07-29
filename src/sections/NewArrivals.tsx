@@ -14,25 +14,25 @@ const products = [
     name: "Pokémon S&V Stellar Crown Booster Box",
     badge: "New",
     price: "$139.99",
-    image: "/products/pokemon.svg",
+    image: "/Pokémon_S_V_Stellar_Crown_Booster_Box-removebg-preview.png",
   },
   {
     name: "Yu-Gi-Oh! Phantom Nightmare Booster Box",
     badge: "Hot",
     price: "$84.99",
-    image: "/products/yugioh.svg",
+    image: "/Yu-Gi-Oh__Phantom_Nightmare_Booster_Box-removebg-preview.png",
   },
   {
     name: "Magic: The Gathering — Final Fantasy Bundle",
     badge: "New",
     price: "$54.99",
-    image: "/products/mtg.svg",
+    image: "/Magic_The_Gathering_Final_Fantasy_Bundle-removebg-preview.png",
   },
   {
     name: "One Piece Card Game — Royal Blood Booster Box",
     badge: "Hot",
     price: "$99.99",
-    image: "/products/onepiece.svg",
+    image: "/One_Piece_Card_Game_Royal_Blood_Booster_Box-removebg-preview.png",
   },
 ];
 
@@ -87,13 +87,13 @@ function ProductCard({
           transformStyle: "preserve-3d",
           perspective: 1000,
         }}
-        className="group relative rounded-3xl overflow-hidden cursor-pointer border-[4px] border-[#c9a84c]/20 hover:border-[#c9a84c]/80 transition-colors duration-500 bg-[#060e1b] shadow-[0_20px_40px_rgba(0,0,0,0.8)]"
+        className="group relative rounded-3xl overflow-hidden cursor-pointer border-[4px] border-[#c9a84c]/20 hover:border-[#c9a84c]/80 transition-colors duration-500 bg-[#060e1b]/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.8)]"
       >
         {/* Image */}
         <div className="relative aspect-[3/4] overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
-            style={{ backgroundImage: `url(${product.image})` }}
+            style={{ backgroundImage: `url("${product.image}")` }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#060e1b] via-[#060e1b]/40 to-transparent" />
 
@@ -122,7 +122,7 @@ function ProductCard({
         </div>
 
         {/* Info */}
-        <div className="p-6 relative z-20 bg-[#060e1b]">
+        <div className="p-6 relative z-20 bg-[#060e1b]/80">
           <h3 className="text-lg font-black text-white mb-2 uppercase tracking-wide group-hover:text-[#c9a84c] transition-colors line-clamp-2 leading-snug">
             {product.name}
           </h3>
@@ -137,8 +137,15 @@ export default function NewArrivals() {
   return (
     <section
       id="new-arrivals"
-      className="relative w-full py-24 lg:py-32 bg-[#0a1628] overflow-hidden"
+      className="relative w-full py-24 lg:py-32 overflow-hidden"
+      style={{
+        background: 'linear-gradient(180deg, #061224 0%, #0b1d34 40%, #081628 100%)',
+      }}
     >
+      {/* Top shadow glow */}
+      <div className="absolute top-0 left-0 w-full h-[200px] pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse 70% 100% at 30% 0%, rgba(15, 40, 75, 0.6) 0%, transparent 70%)' }}
+      />
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10">
         {/* Header */}
         <motion.div

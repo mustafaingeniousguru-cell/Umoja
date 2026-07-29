@@ -43,7 +43,15 @@ export default function HowItWorks() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative w-full py-24 lg:py-32 bg-[#060e1b] overflow-hidden border-y-[2px] border-white/5">
+    <section className="relative w-full py-24 lg:py-32 overflow-hidden border-y-[2px] border-white/5"
+      style={{
+        background: 'linear-gradient(180deg, #0b1d34 0%, #102844 40%, #0d2138 100%)',
+      }}
+    >
+      {/* Top shadow glow */}
+      <div className="absolute top-0 left-0 w-full h-[200px] pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse 70% 100% at 50% 0%, rgba(25, 60, 110, 0.5) 0%, transparent 70%)' }}
+      />
       {/* Background Orbs */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <motion.div 
@@ -99,7 +107,7 @@ export default function HowItWorks() {
               transition={{ duration: 0.5, delay: idx * 0.15 }}
               onMouseEnter={() => setHoveredIndex(idx)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className={`group relative p-8 sm:p-10 rounded-[2rem] bg-[#0a1628] border-2 border-white/5 transition-all duration-500 hover:bg-[#0c1a30] overflow-hidden ${step.border}`}
+              className={`group relative p-8 sm:p-10 rounded-[2rem] bg-[#0a1628]/80 backdrop-blur-xl border-2 border-white/5 transition-all duration-500 hover:bg-[#0c1a30]/80 overflow-hidden ${step.border}`}
             >
               {/* Animated Gradient Background */}
               <div 

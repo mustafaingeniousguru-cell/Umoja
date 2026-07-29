@@ -56,7 +56,15 @@ const bundles = [
 
 export default function TreasureChest() {
   return (
-    <section id="bundles" className="relative w-full py-24 lg:py-32 bg-[#060e1b] overflow-hidden border-t-[4px] border-[#c9a84c]/20">
+    <section id="bundles" className="relative w-full py-24 lg:py-32 overflow-hidden border-t-[4px] border-[#c9a84c]/20"
+      style={{
+        background: 'linear-gradient(180deg, #0a1a2e 0%, #0e2440 40%, #0b1d34 100%)',
+      }}
+    >
+      {/* Top shadow glow */}
+      <div className="absolute top-0 left-0 w-full h-[200px] pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse 60% 100% at 40% 0%, rgba(22, 55, 100, 0.5) 0%, transparent 70%)' }}
+      />
       {/* Premium Background Ambient Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(201,168,76,0.08)_0%,transparent_70%)] pointer-events-none" />
 
@@ -93,7 +101,7 @@ export default function TreasureChest() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className={`relative flex flex-col p-8 sm:p-10 rounded-2xl bg-[#0a1628] border-[2px] transition-all duration-300 group
+                className={`relative flex flex-col p-8 sm:p-10 rounded-2xl bg-[#0a1628]/80 backdrop-blur-xl border-[2px] transition-all duration-300 group
                   ${isCollector ? 'border-[#c9a84c] md:-translate-y-5 shadow-[0_20px_50px_rgba(201,168,76,0.15)]' : 'border-white/10 hover:border-[#c9a84c]/50 shadow-[0_10px_30px_rgba(0,0,0,0.5)]'}
                 `}
               >

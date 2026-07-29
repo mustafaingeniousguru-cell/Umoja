@@ -504,7 +504,7 @@ const MagicBento = ({
           
           const getBackgroundImageStyles = () => {
             if (!card.image) return 'none';
-            return `linear-gradient(to top, rgba(10, 22, 40, 0.45) 0%, rgba(10, 22, 40, 0.05) 60%, rgba(10, 22, 40, 0.05) 100%), url(${card.image})`;
+            return `linear-gradient(to top, rgba(10, 22, 40, 0.45) 0%, rgba(10, 22, 40, 0.05) 60%, rgba(10, 22, 40, 0.05) 100%), url("${card.image}")`;
           };
 
           const cardProps = {
@@ -535,7 +535,6 @@ const MagicBento = ({
                 </div>
                 <div className="magic-bento-card__content">
                   <h2 className="magic-bento-card__title">{card.title}</h2>
-                  <p className="magic-bento-card__description">{card.description}</p>
                 </div>
               </ParticleCard>
             );
@@ -658,7 +657,6 @@ const MagicBento = ({
               </div>
               <div className="magic-bento-card__content">
                 <h2 className="magic-bento-card__title">{card.title}</h2>
-                <p className="magic-bento-card__description">{card.description}</p>
               </div>
             </div>
           );

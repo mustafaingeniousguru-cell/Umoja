@@ -22,7 +22,15 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="relative w-full bg-[#060d18] border-t border-[#c9a84c]/10 overflow-hidden">
+    <footer className="relative w-full border-t border-[#c9a84c]/10 overflow-hidden"
+      style={{
+        background: 'linear-gradient(180deg, #040a14 0%, #02060d 100%)',
+      }}
+    >
+      {/* Top shadow glow */}
+      <div className="absolute top-0 left-0 w-full h-[150px] pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse 60% 100% at 50% 0%, rgba(10, 25, 50, 0.5) 0%, transparent 70%)' }}
+      />
       {/* Top divider glow */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[1px] pointer-events-none"

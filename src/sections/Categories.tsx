@@ -8,42 +8,42 @@ const categoryData = [
     title: "All Treasures",
     description: "Browse everything in store — sealed product, singles, figures, and more.",
     label: "All",
-    image: "/categories/all-treasures.svg",
+    image: "/treasure box.webp",
     color: '#0a1628'
   },
   {
     title: "Pokémon TCG",
     description: "Booster boxes, packs, and singles from the Scarlet & Violet era and beyond.",
     label: "Pokémon",
-    image: "/categories/pokemon-tcg.svg",
+    image: "/pokeman TCG.webp",
     color: '#0a1628'
   },
   {
     title: "One Piece TCG",
     description: "Leader decks, booster boxes, and promo cards from the One Piece Card Game.",
     label: "One Piece",
-    image: "/categories/one-piece-tcg.svg",
+    image: "/ONE piece card game.webp",
     color: '#0a1628'
   },
   {
     title: "Dragon Ball Super",
     description: "Booster boxes and starter decks from Dragon Ball Super Card Game.",
     label: "DBS",
-    image: "/categories/dragon-ball-super.svg",
+    image: "/Dragon ball super.webp",
     color: '#0a1628'
   },
   {
     title: "Funko POP!",
     description: "Collectible Funko POP! figures from your favorite anime and game franchises.",
     label: "Funko",
-    image: "/categories/funko-pop.svg",
+    image: "/funko pop.jfif",
     color: '#0a1628'
   },
   {
     title: "Other Collectibles",
     description: "Hot Wheels, graded slabs, toys, and exclusive limited-edition treasures.",
     label: "More",
-    image: "/categories/other-collectibles.svg",
+    image: "/Others.jfif",
     color: '#0a1628'
   }
 ];
@@ -52,8 +52,15 @@ export default function Categories() {
   return (
     <section
       id="categories"
-      className="relative w-full py-24 lg:py-32 bg-[#0a1628] overflow-hidden border-y-[4px] border-[#c9a84c]/20"
+      className="relative w-full py-24 lg:py-32 overflow-hidden border-y-[4px] border-[#c9a84c]/20"
+      style={{
+        background: 'linear-gradient(180deg, #081628 0%, #0d2138 40%, #0a1a2e 100%)',
+      }}
     >
+      {/* Top shadow glow */}
+      <div className="absolute top-0 left-0 w-full h-[200px] pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse 65% 100% at 70% 0%, rgba(18, 45, 85, 0.5) 0%, transparent 70%)' }}
+      />
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[2px] pointer-events-none"
         style={{

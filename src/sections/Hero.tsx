@@ -4,9 +4,9 @@ import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
 const banners = [
-  { src: "/Umoja Banner Dark background.jpg", alt: "Umoja Treasure Co. Banner" },
-  { src: "/Umoja Banner Dark background 2.jpg", alt: "Umoja Treasure Co. Banner 2" },
-  { src: "/Umoja Banner Dark background 3.jpg", alt: "Umoja Treasure Co. Banner 3" },
+  { src: "/Umoja Banner Dark background 1.jpg", alt: "Umoja Treasure Co. Banner" },
+  { src: "/Umoja Banner Dark background 2 1.jpg", alt: "Umoja Treasure Co. Banner 2" },
+  { src: "/Umoja Banner Dark background 3 1.jpg", alt: "Umoja Treasure Co. Banner 3" },
 ];
 
 export default function Hero() {
@@ -17,29 +17,29 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(next, 6000);
+    const timer = setInterval(next, 8000);
     return () => clearInterval(timer);
   }, [next]);
 
   return (
     <section
       id="home"
-      className="relative w-full overflow-hidden bg-[#0a1628] pt-20"
+      className="relative w-full overflow-hidden bg-[#0a1628] flex flex-col"
+      style={{ height: '100vh', paddingTop: '128px' }}
     >
-      <div className="relative w-full">
+      <div className="relative w-full flex-1 min-h-0">
         {banners.map((banner, i) => (
           <div
             key={i}
-            className={`transition-opacity duration-1000 ${
-              i === current ? "relative opacity-100" : "absolute inset-0 opacity-0"
+            className={`absolute inset-0 transition-opacity duration-[1500ms] ${
+              i === current ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
           >
             <Image
               src={banner.src}
               alt={banner.alt}
-              width={1920}
-              height={1080}
-              style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
+              fill
+              style={{ objectFit: "cover", objectPosition: "center" }}
               priority={i === 0}
             />
           </div>

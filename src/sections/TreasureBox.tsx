@@ -57,8 +57,15 @@ export default function TreasureBox() {
   return (
     <section
       id="treasure"
-      className="relative w-full py-16 lg:py-24 bg-[#0a1628] flex flex-col items-center justify-center border-y-[4px] border-[#c9a84c]/20"
+      className="relative w-full py-16 lg:py-24 flex flex-col items-center justify-center border-y-[4px] border-[#c9a84c]/20 overflow-hidden"
+      style={{
+        background: 'linear-gradient(180deg, #050b16 0%, #0a1a2e 40%, #061224 100%)',
+      }}
     >
+      {/* Top shadow glow */}
+      <div className="absolute top-0 left-0 w-full h-[200px] pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse 60% 100% at 50% 0%, rgba(20, 50, 90, 0.5) 0%, transparent 70%)' }}
+      />
       {/* Background Ambience */}
       <motion.div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"

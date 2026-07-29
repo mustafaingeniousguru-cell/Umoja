@@ -9,7 +9,15 @@ export default function Newsletter() {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
-    <section className="relative w-full py-24 lg:py-32 bg-[#060e1b] overflow-hidden">
+    <section className="relative w-full py-24 lg:py-32 overflow-hidden"
+      style={{
+        background: 'linear-gradient(180deg, #0d2138 0%, #081628 40%, #040a14 100%)',
+      }}
+    >
+      {/* Top shadow glow */}
+      <div className="absolute top-0 left-0 w-full h-[200px] pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse 65% 100% at 60% 0%, rgba(15, 35, 70, 0.5) 0%, transparent 70%)' }}
+      />
       {/* Dynamic Background Mesh / Grid */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-20"
@@ -87,7 +95,7 @@ export default function Newsletter() {
 
             {/* Right Form Area */}
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-              <div className="w-full max-w-[450px] p-8 rounded-3xl bg-[#060e1b] border border-white/5 shadow-2xl relative">
+              <div className="w-full max-w-[450px] p-8 rounded-3xl bg-[#060e1b]/80 backdrop-blur-xl border border-white/5 shadow-2xl relative">
                 
                 {/* Form Glow Effect */}
                 <div className={`absolute inset-0 rounded-3xl transition-opacity duration-500 pointer-events-none ${isFocused ? 'opacity-100' : 'opacity-0'}`}>
