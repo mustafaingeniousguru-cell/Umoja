@@ -94,26 +94,55 @@ function Band({
     rot = new THREE.Vector3(),
     dir = new THREE.Vector3();
     
-  const segmentProps: any = { type: 'dynamic', canSleep: false, colliders: false as const, angularDamping: 0.5, linearDamping: 0.5 };
+  const segmentProps: any = { type: 'dynamic', canSleep: false, colliders: false as const, angularDamping: 0.8, linearDamping: 0.8 };
 
   const { nodes, materials } = useGLTF('/card.glb') as any;
   const texture = useTexture(lanyardImage || '/lanyard.png') as THREE.Texture;
   const frontTex = useTexture(frontImage || BLANK_PIXEL) as THREE.Texture;
   const backTex = useTexture(backImage || BLANK_PIXEL) as THREE.Texture;
 
+  // Manually load front/back images for canvas drawing
+  const [frontImg, setFrontImg] = useState<HTMLImageElement | null>(null);
+  const [backImg, setBackImg] = useState<HTMLImageElement | null>(null);
+
+  useEffect(() => {
+    if (!frontImage) return;
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => setFrontImg(img);
+    img.src = frontImage;
+  }, [frontImage]);
+
+  useEffect(() => {
+    if (!backImage) return;
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => setBackImg(img);
+    img.src = backImage;
+  }, [backImage]);
+
   const cardMap = useMemo(() => {
     const baseMap = materials?.base?.map;
-    if (!baseMap) return null;
-    if (!frontImage && !backImage) return baseMap;
-    const baseImg = baseMap.image;
-    const W = baseImg.width, H = baseImg.height;
+    if (!frontImage && !backImage) return baseMap || null;
+
+    const baseImg = baseMap?.image;
+    const W = baseImg?.width || 1024;
+    const H = baseImg?.height || 1024;
     const canvas = document.createElement('canvas');
     canvas.width = W; canvas.height = H;
     const ctx = canvas.getContext('2d');
-    if (!ctx) return baseMap;
-    ctx.drawImage(baseImg, 0, 0, W, H);
-    
-    const drawFitted = (img: any, rect: any) => {
+    if (!ctx) return baseMap || null;
+
+    // Draw base image or dark background
+    if (baseImg) {
+      ctx.drawImage(baseImg, 0, 0, W, H);
+    } else {
+      ctx.fillStyle = '#0a1628';
+      ctx.fillRect(0, 0, W, H);
+    }
+
+    const drawFitted = (img: HTMLImageElement | null, rect: any) => {
+      if (!img || !img.width || !img.height) return;
       const rx = rect.x * W, ry = rect.y * H, rw = rect.w * W, rh = rect.h * H;
       const pick = imageFit === 'contain' ? Math.min : Math.max;
       const scale = pick(rw / img.width, rh / img.height);
@@ -122,17 +151,17 @@ function Band({
       ctx.save(); ctx.beginPath(); ctx.rect(rx, ry, rw, rh); ctx.clip();
       ctx.drawImage(img, dx, dy, dw, dh); ctx.restore();
     };
-    
-    if (frontImage && frontTex.image) drawFitted(frontTex.image, FRONT_UV_RECT);
-    if (backImage && backTex.image) drawFitted(backTex.image, BACK_UV_RECT);
-    
+
+    if (frontImage && frontImg) drawFitted(frontImg, { x: 0, y: 0, w: 1, h: 1 });
+    if (backImage && backImg) drawFitted(backImg, { x: 0, y: 0, w: 1, h: 1 });
+
     const composite = new THREE.CanvasTexture(canvas);
     composite.colorSpace = THREE.SRGBColorSpace;
-    composite.flipY = baseMap.flipY;
+    composite.flipY = baseMap?.flipY ?? true;
     composite.anisotropy = 16;
     composite.needsUpdate = true;
     return composite;
-  }, [frontImage, backImage, imageFit, frontTex, backTex, materials]);
+  }, [frontImage, backImage, imageFit, frontImg, backImg, materials]);
 
   const [curve] = useState(() => new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]));
   const [dragged, drag] = useState<THREE.Vector3 | false>(false);
@@ -157,7 +186,7 @@ function Band({
 
   useFrame((state, delta) => {
     if (!nudgeApplied.current && card.current && !dragged) {
-      card.current.applyImpulse({ x: 4, y: 0, z: 0 }, true);
+      card.current.applyImpulse({ x: 1.5, y: 0, z: 0 }, true);
       nudgeApplied.current = true;
     }
     if (dragged) {
@@ -218,12 +247,12 @@ function Band({
               <>
                 <mesh geometry={nodes.card.geometry}>
                   <meshPhysicalMaterial
-                    map={cardMap}
+                    map={cardMap || materials?.base?.map}
                     map-anisotropy={16}
                     clearcoat={isMobile ? 0 : 1}
                     clearcoatRoughness={0.15}
                     roughness={0.9}
-                    metalness={0.8}
+                    metalness={0.3}
                   />
                 </mesh>
                 {nodes.clip && <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />}
@@ -235,7 +264,7 @@ function Band({
                 {/* Main Card Body */}
                 <mesh>
                    <boxGeometry args={[0.85, 1.3, 0.04]} />
-                   <meshStandardMaterial color="#0a1628" metalness={0.5} roughness={0.5} />
+                   <meshStandardMaterial map={cardMap || undefined} color={cardMap ? "#ffffff" : "#0a1628"} metalness={0.3} roughness={0.5} />
                 </mesh>
                 {/* Solid Gold Heavy Border Frame */}
                 <mesh position={[0, 0, -0.025]}>

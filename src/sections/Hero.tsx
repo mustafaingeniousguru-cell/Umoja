@@ -4,9 +4,9 @@ import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
 const banners = [
-  { src: "/Umoja Banner Dark background 1.jpg", alt: "Umoja Treasure Co. Banner" },
-  { src: "/Umoja Banner Dark background 2 1.jpg", alt: "Umoja Treasure Co. Banner 2" },
-  { src: "/Umoja Banner Dark background 3 1.jpg", alt: "Umoja Treasure Co. Banner 3" },
+  { src: "/Umoja Banner Dark background 1 1.jpg", alt: "Umoja Treasure Co. Banner" },
+  { src: "/Umoja Banner Dark background 2 2.jpg", alt: "Umoja Treasure Co. Banner 2" },
+  { src: "/Umoja Banner Dark background 3 2.jpg", alt: "Umoja Treasure Co. Banner 3" },
 ];
 
 export default function Hero() {
@@ -25,7 +25,7 @@ export default function Hero() {
     <section
       id="home"
       className="relative w-full overflow-hidden bg-[#0a1628] flex flex-col"
-      style={{ height: '100vh', paddingTop: '128px' }}
+      style={{ height: '100vh', paddingTop: '140px' }}
     >
       <div className="relative w-full flex-1 min-h-0">
         {banners.map((banner, i) => (

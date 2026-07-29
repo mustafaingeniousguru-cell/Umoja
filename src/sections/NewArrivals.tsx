@@ -14,25 +14,25 @@ const products = [
     name: "Pokémon S&V Stellar Crown Booster Box",
     badge: "New",
     price: "$139.99",
-    image: "/Pokémon_S_V_Stellar_Crown_Booster_Box-removebg-preview.png",
+    image: "/pb_bb.png",
   },
   {
     name: "Yu-Gi-Oh! Phantom Nightmare Booster Box",
     badge: "Hot",
     price: "$84.99",
-    image: "/Yu-Gi-Oh__Phantom_Nightmare_Booster_Box-removebg-preview.png",
+    image: "/DR_ETB.png",
   },
   {
     name: "Magic: The Gathering — Final Fantasy Bundle",
     badge: "New",
     price: "$54.99",
-    image: "/Magic_The_Gathering_Final_Fantasy_Bundle-removebg-preview.png",
+    image: "/ah_bb.png",
   },
   {
     name: "One Piece Card Game — Royal Blood Booster Box",
     badge: "Hot",
     price: "$99.99",
-    image: "/One_Piece_Card_Game_Royal_Blood_Booster_Box-removebg-preview.png",
+    image: "/SPC.jpg",
   },
 ];
 

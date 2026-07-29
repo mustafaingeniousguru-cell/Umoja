@@ -89,7 +89,7 @@ export default function TreasureBox() {
             >
               {/* CLEANED UP HEADER: JUST "TREASURE BOX" */}
               <div className="text-center z-20 relative">
-                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-white uppercase tracking-widest drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]">
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-[#c9a84c] uppercase tracking-widest drop-shadow-[0_0_15px_rgba(201,168,76,0.4)]">
                   Treasure Box
                 </h2>
               </div>
@@ -98,8 +98,9 @@ export default function TreasureBox() {
               <div className="w-full relative z-10 -my-4 sm:-my-10 bg-transparent">
                 <Lanyard 
                   position={[0, 0, 25]} 
-                  gravity={[0, -40, 0]} 
+                  gravity={[0, -20, 0]} 
                   frontImage="/UTC_logo_png-01.png"
+                  imageFit="contain"
                   onDragChange={(dragging: boolean) => {
                     if (dragging) setIsRevealed(true);
                   }}

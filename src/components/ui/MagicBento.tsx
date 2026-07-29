@@ -504,7 +504,7 @@ const MagicBento = ({
           
           const getBackgroundImageStyles = () => {
             if (!card.image) return 'none';
-            return `linear-gradient(to top, rgba(10, 22, 40, 0.45) 0%, rgba(10, 22, 40, 0.05) 60%, rgba(10, 22, 40, 0.05) 100%), url("${card.image}")`;
+            return `url("${card.image}")`;
           };
 
           const cardProps = {
@@ -530,6 +530,7 @@ const MagicBento = ({
                 clickEffect={clickEffect}
                 enableMagnetism={enableMagnetism}
               >
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(5,11,22,0.95) 0%, rgba(5,11,22,0.8) 25%, rgba(5,11,22,0.4) 50%, rgba(5,11,22,0.1) 75%, rgba(5,11,22,0) 100%)', zIndex: 1, pointerEvents: 'none' }} />
                 <div className="magic-bento-card__header">
                   <div className="magic-bento-card__label">{card.label}</div>
                 </div>
@@ -652,6 +653,7 @@ const MagicBento = ({
                 el.addEventListener('click', handleClick);
               }}
             >
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(5,11,22,0.95) 0%, rgba(5,11,22,0.8) 25%, rgba(5,11,22,0.4) 50%, rgba(5,11,22,0.1) 75%, rgba(5,11,22,0) 100%)', zIndex: 1, pointerEvents: 'none' }} />
               <div className="magic-bento-card__header">
                 <div className="magic-bento-card__label">{card.label}</div>
               </div>
