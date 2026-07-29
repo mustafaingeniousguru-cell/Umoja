@@ -122,11 +122,11 @@ function ProductCard({
         </div>
 
         {/* Info */}
-        <div className="p-6 relative z-20 bg-[#060e1b]/80">
-          <h3 className="text-lg font-black text-white mb-2 uppercase tracking-wide group-hover:text-[#c9a84c] transition-colors line-clamp-2 leading-snug">
+        <div className="p-4 sm:p-6 relative z-20 bg-[#060e1b]/80">
+          <h3 className="text-base sm:text-lg font-black text-white mb-2 uppercase tracking-wide group-hover:text-[#c9a84c] transition-colors line-clamp-2 leading-snug">
             {product.name}
           </h3>
-          <p className="text-2xl font-black text-[#c9a84c] drop-shadow-md">{product.price}</p>
+          <p className="text-xl sm:text-2xl font-black text-[#c9a84c] drop-shadow-md">{product.price}</p>
         </div>
       </motion.div>
     </motion.div>
@@ -137,7 +137,7 @@ export default function NewArrivals() {
   return (
     <section
       id="new-arrivals"
-      className="relative w-full py-24 lg:py-32 overflow-hidden"
+      className="relative w-full py-16 lg:py-32 overflow-hidden"
       style={{
         background: 'linear-gradient(180deg, #061224 0%, #0b1d34 40%, #081628 100%)',
       }}
@@ -153,13 +153,13 @@ export default function NewArrivals() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-16 gap-6"
+          className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 sm:mb-16 gap-4"
         >
           <div>
             <span className="text-sm font-black tracking-[0.3em] text-[#c9a84c] uppercase mb-3 block drop-shadow-md">
               Newly Discovered
             </span>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-wider drop-shadow-lg">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-wider drop-shadow-lg">
               The Latest Treasures
             </h2>
           </div>
@@ -170,7 +170,7 @@ export default function NewArrivals() {
         </motion.div>
 
         {/* Product grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {products.map((product, idx) => (
             <ProductCard key={product.name} product={product} index={idx} />
           ))}

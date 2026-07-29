@@ -50,8 +50,8 @@ export default function Footer() {
         }}
       />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           {/* Brand column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -65,7 +65,7 @@ export default function Footer() {
               alt="Umoja Treasure Co."
               width={80}
               height={80}
-              className="rounded-full mb-4"
+              className="rounded-full mb-4 w-16 h-16 sm:w-20 sm:h-20"
             />
             <p className="text-sm text-white/70 leading-relaxed max-w-xs mb-6">
               San Antonio & Kansas's premier hobby destination for trading cards, toys and collectibles. Built by collectors, for collectors.
@@ -113,7 +113,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 sm:mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/60">
             &copy; 2026 Umoja Treasure Company. All Rights Reserved.
           </p>

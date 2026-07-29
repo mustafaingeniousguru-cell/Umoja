@@ -48,7 +48,7 @@ export default function Header() {
             : undefined
         }
       >
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 flex items-center justify-between gap-4">
+        <div className="max-w-[1600px] mx-auto px-3 sm:px-8 lg:px-12 flex items-center justify-between gap-2 sm:gap-4">
           {/* Left side — Home/Shop/Pre-Orders/About nav */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8 flex-1 justify-start pl-4 xl:pl-8">
             {leftNavLinks.map((link) => (
@@ -70,7 +70,7 @@ export default function Header() {
               alt="Umoja Treasure Co."
               width={96}
               height={96}
-              className="rounded-full group-hover:opacity-80 transition-opacity"
+              className="rounded-full group-hover:opacity-80 transition-opacity w-12 h-12 sm:w-16 sm:h-16 lg:w-24 lg:h-24"
             />
           </a>
 
@@ -88,7 +88,7 @@ export default function Header() {
                 </a>
               ))}
             </nav>
-            <div className="hidden sm:flex items-center gap-4 lg:gap-5">
+            <div className="hidden md:flex items-center gap-4 lg:gap-5">
               <button className="flex items-center gap-2 text-xs lg:text-sm xl:text-base text-white hover:text-[#c9a84c] uppercase tracking-[0.15em] transition-colors duration-300 cursor-pointer whitespace-nowrap">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
                 Wishlist
@@ -135,12 +135,12 @@ export default function Header() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm text-white hover:text-[#c9a84c] transition-colors uppercase tracking-wide"
+                  className="text-base text-white hover:text-[#c9a84c] transition-colors uppercase tracking-wide py-1"
                 >
                   {link.label}
                 </a>
               ))}
-              <button className="mt-2 flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-[#c9a84c]/30 text-[#c9a84c] font-bold text-sm cursor-pointer uppercase tracking-widest">
+              <button className="mt-2 flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-[#c9a84c]/30 text-[#c9a84c] font-bold text-sm cursor-pointer uppercase tracking-widest w-full">
                 Sign In
               </button>
             </div>

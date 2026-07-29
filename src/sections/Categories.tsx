@@ -52,7 +52,7 @@ export default function Categories() {
   return (
     <section
       id="categories"
-      className="relative w-full py-24 lg:py-32 overflow-hidden border-y-[4px] border-[#c9a84c]/20"
+      className="relative w-full py-16 lg:py-32 overflow-hidden border-y-[4px] border-[#c9a84c]/20"
       style={{
         background: 'linear-gradient(180deg, #081628 0%, #0d2138 40%, #0a1a2e 100%)',
       }}
@@ -88,7 +88,7 @@ export default function Categories() {
             <span className="text-sm font-black tracking-[0.3em] text-[#c9a84c] uppercase mb-3 block drop-shadow-md">
               Shop By Category
             </span>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-2 uppercase tracking-wider drop-shadow-lg">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white mb-2 uppercase tracking-wider drop-shadow-lg">
               Shop by Category
             </h2>
           </div>

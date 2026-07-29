@@ -9,7 +9,7 @@ export default function Newsletter() {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
-    <section className="relative w-full py-24 lg:py-32 overflow-hidden"
+    <section className="relative w-full py-16 lg:py-32 overflow-hidden"
       style={{
         background: 'linear-gradient(180deg, #0d2138 0%, #081628 40%, #040a14 100%)',
       }}
@@ -44,7 +44,7 @@ export default function Newsletter() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative rounded-[3rem] p-8 md:p-16 overflow-hidden bg-[#0a1628]/80 backdrop-blur-2xl border-[2px] border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.6)]"
+          className="relative rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-8 md:p-16 overflow-hidden bg-[#0a1628]/80 backdrop-blur-2xl border-[2px] border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.6)]"
         >
           {/* Subtle Card Inner Glow */}
           <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
@@ -60,20 +60,20 @@ export default function Newsletter() {
             />
           </div>
 
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-16 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-16 relative z-10">
             
             {/* Left Content */}
             <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/5 border border-white/10 mb-8 shadow-inner">
-                <Mail className="w-8 h-8 text-[#c9a84c]" strokeWidth={1.5} />
+              <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/5 border border-white/10 mb-6 sm:mb-8 shadow-inner">
+                <Mail className="w-7 h-7 sm:w-8 sm:h-8 text-[#c9a84c]" strokeWidth={1.5} />
               </div>
               
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 uppercase tracking-wider leading-[1.1]">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 sm:mb-6 uppercase tracking-wider leading-[1.1]">
                 Get Early Information<br/>
                 <span className="text-[#c9a84c]">on New Treasures</span>
               </h2>
               
-              <p className="text-white/90 text-lg leading-relaxed mb-8 max-w-md">
+              <p className="text-white/90 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-md">
                 Join the Umoja mailing list and be the first to know about restocks, new sets, exclusive drops, and member deals.
               </p>
 
@@ -95,8 +95,7 @@ export default function Newsletter() {
 
             {/* Right Form Area */}
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-              <div className="w-full max-w-[450px] p-8 rounded-3xl bg-[#060e1b]/80 backdrop-blur-xl border border-white/5 shadow-2xl relative">
-                
+              <div className="w-full max-w-[450px] p-6 sm:p-8 rounded-3xl bg-[#060e1b]/80 backdrop-blur-xl border border-white/5 shadow-2xl relative">                
                 {/* Form Glow Effect */}
                 <div className={`absolute inset-0 rounded-3xl transition-opacity duration-500 pointer-events-none ${isFocused ? 'opacity-100' : 'opacity-0'}`}>
                   <div className="absolute inset-[-2px] rounded-[1.6rem] bg-gradient-to-r from-[#c9a84c]/50 via-blue-500/50 to-[#c9a84c]/50 blur-md" />
@@ -113,7 +112,7 @@ export default function Newsletter() {
                         onFocus={() => setIsFocused(true)}
                         onBlur={() => setIsFocused(false)}
                         placeholder="your@email.com"
-                        className="w-full px-6 py-5 rounded-2xl bg-white/5 border-2 border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-[#c9a84c] focus:bg-white/10 transition-all duration-300"
+                        className="w-full px-5 sm:px-6 py-4 sm:py-5 rounded-2xl bg-white/5 border-2 border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-[#c9a84c] focus:bg-white/10 transition-all duration-300 text-base"
                       />
                     </div>
                   </div>
@@ -121,7 +120,7 @@ export default function Newsletter() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="group relative w-full flex items-center justify-center gap-3 px-8 py-5 rounded-2xl bg-[#c9a84c] text-[#060e1b] font-black uppercase tracking-widest overflow-hidden transition-shadow hover:shadow-[0_0_30px_rgba(201,168,76,0.3)]"
+                    className="group relative w-full flex items-center justify-center gap-3 px-6 sm:px-8 py-4 sm:py-5 rounded-2xl bg-[#c9a84c] text-[#060e1b] font-black uppercase tracking-widest overflow-hidden transition-shadow hover:shadow-[0_0_30px_rgba(201,168,76,0.3)] text-base"
                   >
                     <span className="relative z-10">Subscribe</span>
                     <ArrowRight className="w-5 h-5 relative z-10 transition-transform group-hover:translate-x-2" />

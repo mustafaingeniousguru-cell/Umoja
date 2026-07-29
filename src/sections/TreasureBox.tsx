@@ -8,17 +8,17 @@ import Lanyard from "../components/3d/Lanyard";
 function CountdownBlock({ value, label }: { value: string; label: string }) {
   return (
     <div className="flex flex-col items-center">
-      <div className="w-16 sm:w-20 h-16 sm:h-20 rounded-xl border-[3px] border-[#c9a84c] bg-[#040a14] flex items-center justify-center shadow-[inset_0_5px_15px_rgba(0,0,0,0.8),0_5px_10px_rgba(0,0,0,0.5)]">
+      <div className="w-12 h-12 sm:w-20 sm:h-20 rounded-lg sm:rounded-xl border-[2px] sm:border-[3px] border-[#c9a84c] bg-[#040a14] flex items-center justify-center shadow-[inset_0_5px_15px_rgba(0,0,0,0.8),0_5px_10px_rgba(0,0,0,0.5)]">
         <motion.span
           key={value}
           initial={{ opacity: 0.5, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="text-3xl sm:text-4xl font-black text-white tabular-nums font-mono drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+          className="text-lg sm:text-4xl font-black text-white tabular-nums font-mono drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
         >
           {value}
         </motion.span>
       </div>
-      <span className="text-[10px] sm:text-xs text-white uppercase tracking-[0.2em] mt-3 font-black">
+      <span className="text-[8px] sm:text-xs text-white uppercase tracking-[0.15em] sm:tracking-[0.2em] mt-1.5 sm:mt-3 font-black">
         {label}
       </span>
     </div>
@@ -57,7 +57,7 @@ export default function TreasureBox() {
   return (
     <section
       id="treasure"
-      className="relative w-full py-16 lg:py-24 flex flex-col items-center justify-center border-y-[4px] border-[#c9a84c]/20 overflow-hidden"
+      className="relative w-full py-12 lg:py-24 flex flex-col items-center justify-center border-y-[4px] border-[#c9a84c]/20 overflow-hidden"
       style={{
         background: 'linear-gradient(180deg, #050b16 0%, #0a1a2e 40%, #061224 100%)',
       }}
@@ -89,7 +89,7 @@ export default function TreasureBox() {
             >
               {/* CLEANED UP HEADER: JUST "TREASURE BOX" */}
               <div className="text-center z-20 relative">
-                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-[#c9a84c] uppercase tracking-widest drop-shadow-[0_0_15px_rgba(201,168,76,0.4)]">
+                <h2 className="text-4xl sm:text-6xl md:text-7xl font-black text-[#c9a84c] uppercase tracking-widest drop-shadow-[0_0_15px_rgba(201,168,76,0.4)]">
                   Treasure Box
                 </h2>
               </div>
@@ -109,7 +109,7 @@ export default function TreasureBox() {
 
               {/* CLEANED UP FOOTER: JUST "DRAG IT" AND ARROW */}
               <div className="flex flex-col items-center z-20 relative -mt-4">
-                <p className="text-white font-black text-3xl tracking-[0.3em] uppercase drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+                <p className="text-white font-black text-xl sm:text-3xl tracking-[0.3em] uppercase drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
                   Drag It
                 </p>
                 <motion.div
@@ -129,23 +129,23 @@ export default function TreasureBox() {
               className="w-full overflow-hidden"
             >
               {/* HORIZONTAL WIDE SECTION, REDUCED HEIGHT */}
-              <div className="w-full max-w-[1000px] mx-auto rounded-[2rem] border-[4px] border-[#c9a84c] bg-[#040a14] shadow-[0_30px_60px_rgba(0,0,0,0.8),inset_0_0_40px_rgba(201,168,76,0.1)] p-8 sm:p-12 relative flex flex-col md:flex-row items-center justify-between gap-10 mt-8 z-20">
+              <div className="w-full max-w-[1000px] mx-auto rounded-[1.5rem] sm:rounded-[2rem] border-[3px] sm:border-[4px] border-[#c9a84c] bg-[#040a14] shadow-[0_30px_60px_rgba(0,0,0,0.8),inset_0_0_40px_rgba(201,168,76,0.1)] p-4 sm:p-12 relative flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-10 mt-4 sm:mt-8 z-20 overflow-hidden">
                 
                 {/* Left Side: Premium Content & CTA */}
-                <div className="flex flex-col items-center md:items-start text-center md:text-left flex-1 relative z-10">
-                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-2 uppercase tracking-wider drop-shadow-lg">
+                <div className="flex flex-col items-center md:items-start text-center md:text-left flex-1 relative z-10 w-full">
+                  <h2 className="text-2xl sm:text-4xl lg:text-6xl font-black text-white mb-2 uppercase tracking-wider drop-shadow-lg">
                     Treasure<br />Of The Day
                   </h2>
-                  <p className="text-lg text-[#c9a84c] font-bold mb-8 tracking-widest uppercase">
+                  <p className="text-sm sm:text-lg text-[#c9a84c] font-bold mb-4 sm:mb-8 tracking-widest uppercase">
                     Premium Mystery Hobby Box
                   </p>
 
                   {/* Compact Horizontal Countdown Blocks */}
-                  <div className="flex items-center gap-3 sm:gap-4 mb-10">
+                  <div className="flex items-center justify-center gap-1 sm:gap-4 mb-4 sm:mb-10 w-full">
                     <CountdownBlock value={pad(timeLeft.hours)} label="Hours" />
-                    <span className="text-4xl text-[#c9a84c] font-black mt-[-20px]">:</span>
+                    <span className="text-xl sm:text-4xl text-[#c9a84c] font-black mt-[-12px] sm:mt-[-20px]">:</span>
                     <CountdownBlock value={pad(timeLeft.minutes)} label="Minutes" />
-                    <span className="text-4xl text-[#c9a84c] font-black mt-[-20px]">:</span>
+                    <span className="text-xl sm:text-4xl text-[#c9a84c] font-black mt-[-12px] sm:mt-[-20px]">:</span>
                     <CountdownBlock value={pad(timeLeft.seconds)} label="Seconds" />
                   </div>
 
@@ -153,21 +153,21 @@ export default function TreasureBox() {
                   <motion.button
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
-                    className="w-full sm:w-auto px-10 py-5 rounded-[2rem] bg-[#c9a84c] text-white font-black text-xl uppercase tracking-widest border-[4px] border-[#c9a84c] hover:bg-[#040a14] transition-all duration-300 shadow-[0_15px_30px_rgba(201,168,76,0.3)] whitespace-nowrap"
+                    className="w-full px-4 sm:px-10 py-3 sm:py-5 rounded-[1.5rem] sm:rounded-[2rem] bg-[#c9a84c] text-white font-black text-base sm:text-xl uppercase tracking-widest border-[3px] sm:border-[4px] border-[#c9a84c] hover:bg-[#040a14] transition-all duration-300 shadow-[0_15px_30px_rgba(201,168,76,0.3)] text-center sm:whitespace-nowrap"
                   >
                     Secure Bounty &mdash; $59.99
                   </motion.button>
                 </div>
 
                 {/* Right Side: Heavy Chest Image/SVG */}
-                <div className="w-full md:w-[400px] flex items-center justify-center relative z-10">
+                <div className="w-full md:w-[400px] flex items-center justify-center relative z-10 mt-2 sm:mt-0">
                   {/* Glowing backdrop for the chest */}
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,168,76,0.2)_0%,transparent_60%)] pointer-events-none rounded-[2.5rem]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,168,76,0.2)_0%,transparent_60%)] pointer-events-none rounded-[2rem] sm:rounded-[2.5rem]" />
                   
                   <motion.div
                     animate={{ y: [-10, 10, -10] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="relative w-full max-w-[280px] aspect-square"
+                    className="relative w-full max-w-[200px] sm:max-w-[280px] aspect-square"
                   >
                     <svg viewBox="0 0 200 180" className="relative w-full h-full drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)]" fill="none">
                       <rect x="30" y="80" width="140" height="80" rx="8" fill="#040a14" stroke="#c9a84c" strokeWidth="6" />
