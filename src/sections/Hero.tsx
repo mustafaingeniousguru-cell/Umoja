@@ -17,7 +17,7 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(next, 4000);
+    const timer = setInterval(next, 6000);
     return () => clearInterval(timer);
   }, [next]);
 
@@ -30,15 +30,16 @@ export default function Hero() {
         {banners.map((banner, i) => (
           <div
             key={i}
-            className="absolute inset-0 transition-opacity duration-1000"
-            style={{ opacity: i === current ? 1 : 0 }}
+            className={`transition-opacity duration-1000 ${
+              i === current ? "relative opacity-100" : "absolute inset-0 opacity-0"
+            }`}
           >
             <Image
               src={banner.src}
               alt={banner.alt}
               width={1920}
               height={1080}
-              style={{ width: "100%", height: "auto", display: "block" }}
+              style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
               priority={i === 0}
             />
           </div>

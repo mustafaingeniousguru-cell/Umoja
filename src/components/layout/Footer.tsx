@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const footerLinks = {
   Collections: [
@@ -51,9 +52,13 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-1"
           >
-            <h3 className="text-xl font-black tracking-[0.1em] text-[#c9a84c] mb-4 leading-tight">
-              UMOJA TREASURE CO.
-            </h3>
+            <Image
+              src="/UTC_logo_png-01.png"
+              alt="Umoja Treasure Co."
+              width={80}
+              height={80}
+              className="rounded-full mb-4"
+            />
             <p className="text-sm text-white/70 leading-relaxed max-w-xs mb-6">
               San Antonio & Kansas's premier hobby destination for trading cards, toys and collectibles. Built by collectors, for collectors.
             </p>

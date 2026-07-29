@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Mail, ArrowRight } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Newsletter() {
   const [isFocused, setIsFocused] = useState(false);
@@ -40,6 +41,17 @@ export default function Newsletter() {
           {/* Subtle Card Inner Glow */}
           <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
 
+          {/* Umoja Logo Watermark */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <Image
+              src="/UTC_logo_png-01.png"
+              alt=""
+              width={600}
+              height={600}
+              className="opacity-[0.08] rounded-full"
+            />
+          </div>
+
           <div className="flex flex-col lg:flex-row items-center justify-between gap-16 relative z-10">
             
             {/* Left Content */}
@@ -49,13 +61,28 @@ export default function Newsletter() {
               </div>
               
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 uppercase tracking-wider leading-[1.1]">
-                Join the<br/>
-                <span className="text-[#c9a84c]">Inner Circle</span>
+                Get Early Information<br/>
+                <span className="text-[#c9a84c]">on New Treasures</span>
               </h2>
               
-              <p className="text-white/90 text-lg leading-relaxed mb-10 max-w-md">
-                Sign up for early restock alerts, exclusive member drops, and 5% off everything.
+              <p className="text-white/90 text-lg leading-relaxed mb-8 max-w-md">
+                Join the Umoja mailing list and be the first to know about restocks, new sets, exclusive drops, and member deals.
               </p>
+
+              <ul className="flex flex-col gap-3 mb-2">
+                <li className="flex items-center gap-3 text-white/90 text-sm">
+                  <span className="text-[#c9a84c]">&#9670;</span>
+                  Early restock alerts
+                </li>
+                <li className="flex items-center gap-3 text-white/90 text-sm">
+                  <span className="text-[#c9a84c]">&#9670;</span>
+                  Exclusive member deals
+                </li>
+                <li className="flex items-center gap-3 text-white/90 text-sm">
+                  <span className="text-[#c9a84c]">&#9670;</span>
+                  New set announcements
+                </li>
+              </ul>
             </div>
 
             {/* Right Form Area */}
@@ -77,7 +104,7 @@ export default function Newsletter() {
                         type="email" 
                         onFocus={() => setIsFocused(true)}
                         onBlur={() => setIsFocused(false)}
-                        placeholder="Enter your email address"
+                        placeholder="your@email.com"
                         className="w-full px-6 py-5 rounded-2xl bg-white/5 border-2 border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-[#c9a84c] focus:bg-white/10 transition-all duration-300"
                       />
                     </div>
@@ -95,9 +122,6 @@ export default function Newsletter() {
                     <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                   </motion.button>
 
-                  <p className="text-center text-xs text-white/70 mt-2">
-                    By subscribing, you agree to our Terms of Service.
-                  </p>
                 </div>
               </div>
             </div>

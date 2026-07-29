@@ -28,13 +28,13 @@ export default function Header() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-0 left-0 right-0 z-50 px-2 pt-2"
+      className="fixed top-0 left-0 right-0 z-50 px-2 pt-2 pb-2"
     >
       <div
         className={`transition-all duration-500 rounded-b-2xl ${
           scrolled
-            ? "bg-[#0a1628]/80 backdrop-blur-2xl border border-[#c9a84c]/10 border-t-0 py-3"
-            : "bg-transparent py-5"
+            ? "bg-[#0a1628]/80 backdrop-blur-2xl border border-[#c9a84c]/10 border-t-0 py-2"
+            : "bg-transparent py-2"
         }`}
         style={
           scrolled
@@ -50,8 +50,8 @@ export default function Header() {
             <Image
               src="/UTC_logo_png-01.png"
               alt="Umoja Treasure Co."
-              width={64}
-              height={64}
+              width={56}
+              height={56}
               className="rounded-full group-hover:opacity-80 transition-opacity"
             />
           </a>

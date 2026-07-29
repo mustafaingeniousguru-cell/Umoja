@@ -6,33 +6,33 @@ import { useState } from "react";
 
 const steps = [
   {
-    id: "01",
-    title: "Browse",
+    id: "1",
+    title: "Browse the Store",
     desc: "Shop sealed product, singles, figures, and accessories — all from trusted hobby brands.",
     icon: Search,
     color: "from-[#c9a84c]/10 to-[#0a1628]/10",
     border: "group-hover:border-[#c9a84c]/50"
   },
   {
-    id: "02",
-    title: "Collect",
-    desc: "Mix categories, grab a treasure chest, or hunt for your holy grail. No minimum order required.",
+    id: "2",
+    title: "Add to Cart",
+    desc: "Mix categories, grab a treasure chest, bounty or hunt for your single or slab grail. No Minimum order.",
     icon: ShoppingCart,
     color: "from-[#c9a84c]/10 to-[#0a1628]/10",
     border: "group-hover:border-[#c9a84c]/50"
   },
   {
-    id: "03",
-    title: "Secure",
-    desc: "Pay your way — Card, PayPal, Crypto, Apple Pay. 100% SSL-secured, PCI-compliant checkout.",
+    id: "3",
+    title: "Checkout Securely",
+    desc: "Pay your way — card, PayPal, Apple Pay. SSL-secured, PCI-compliant checkout.",
     icon: Lock,
     color: "from-[#c9a84c]/10 to-[#0a1628]/10",
     border: "group-hover:border-[#c9a84c]/50"
   },
   {
-    id: "04",
-    title: "Receive",
-    desc: "Fast, tracked shipping. Free over $300 (or $150 for members). Packed with collector-grade care.",
+    id: "4",
+    title: "Fast Shipping",
+    desc: "Orders ship within 1–5 business days. Free shipping over $300 or $150 for club members.",
     icon: Truck,
     color: "from-[#c9a84c]/10 to-[#0a1628]/10",
     border: "group-hover:border-[#c9a84c]/50"
@@ -73,7 +73,7 @@ export default function HowItWorks() {
               <span className="text-sm font-bold tracking-[0.2em] text-[#c9a84c] uppercase">The Process</span>
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-wider drop-shadow-lg">
-              Seamless Collecting
+              How It Works
             </h2>
           </motion.div>
           
