@@ -8,7 +8,7 @@ const categoryData = [
     title: "All Treasures",
     description: "Browse everything in store — sealed product, singles, figures, and more.",
     label: "All",
-    image: "/treasure box.webp",
+    image: "/emblem.png",
     color: '#0a1628'
   },
   {

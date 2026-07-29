@@ -20,19 +20,19 @@ const products = [
     name: "Yu-Gi-Oh! Phantom Nightmare Booster Box",
     badge: "Hot",
     price: "$84.99",
-    image: "/DR_ETB.png",
+    image: "/Yu-Gi-Oh__Phantom_Nightmare_Booster_Box-removebg-preview.png",
   },
   {
     name: "Magic: The Gathering — Final Fantasy Bundle",
     badge: "New",
     price: "$54.99",
-    image: "/ah_bb.png",
+    image: "/Magic_The_Gathering_Final_Fantasy_Bundle-removebg-preview.png",
   },
   {
     name: "One Piece Card Game — Royal Blood Booster Box",
     badge: "Hot",
     price: "$99.99",
-    image: "/SPC.jpg",
+    image: "/One_Piece_Card_Game_Royal_Blood_Booster_Box-removebg-preview.png",
   },
 ];
 
