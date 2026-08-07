@@ -52,7 +52,7 @@ export default function Categories() {
   return (
     <section
       id="categories"
-      className="relative w-full py-16 lg:py-32 overflow-hidden border-y-[4px] border-[#c9a84c]/20"
+      className="relative w-full py-12 lg:py-32 overflow-hidden border-y-[4px] border-[#c9a84c]/20"
       style={{
         background: 'linear-gradient(180deg, #081628 0%, #0d2138 40%, #0a1a2e 100%)',
       }}
@@ -76,19 +76,19 @@ export default function Categories() {
           filter: "blur(40px)",
         }}
       />
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex items-end justify-between mb-16"
+          className="flex items-end justify-between mb-6 sm:mb-16"
         >
           <div>
-            <span className="text-sm font-black tracking-[0.3em] text-[#c9a84c] uppercase mb-3 block drop-shadow-md">
+            <span className="text-xs font-black tracking-[0.2em] text-[#c9a84c] uppercase mb-2 block drop-shadow-md">
               Shop By Category
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white mb-2 uppercase tracking-wider drop-shadow-lg">
+            <h2 className="text-xl sm:text-4xl lg:text-6xl font-black text-white mb-2 uppercase tracking-wider drop-shadow-lg">
               Shop by Category
             </h2>
           </div>

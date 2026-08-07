@@ -24,7 +24,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative w-full overflow-hidden bg-[#0a1628] flex flex-col h-[280px] sm:h-[500px] lg:h-screen pt-[60px] sm:pt-[90px] lg:pt-[140px]"
+      className="relative w-full overflow-hidden bg-[#0a1628] flex flex-col h-[260px] sm:h-[500px] lg:h-screen pt-[60px] sm:pt-[90px] lg:pt-[140px]"
     >
       <div className="relative w-full flex-1 min-h-0">
         {banners.map((banner, i) => (

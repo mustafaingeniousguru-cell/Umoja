@@ -43,7 +43,7 @@ export default function HowItWorks() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative w-full py-16 lg:py-32 overflow-hidden border-y-[2px] border-white/5"
+    <section className="relative w-full py-12 lg:py-32 overflow-hidden border-y-[2px] border-white/5"
       style={{
         background: 'linear-gradient(180deg, #0b1d34 0%, #102844 40%, #0d2138 100%)',
       }}
@@ -66,21 +66,21 @@ export default function HowItWorks() {
         />
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-6 mb-6 sm:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex items-center gap-2 mb-4">
-              <Sparkles className="w-5 h-5 text-[#c9a84c]" />
-              <span className="text-sm font-bold tracking-[0.2em] text-[#c9a84c] uppercase">The Process</span>
+            <div className="flex items-center gap-2 mb-3">
+              <Sparkles className="w-4 h-4 text-[#c9a84c]" />
+              <span className="text-xs font-bold tracking-[0.15em] text-[#c9a84c] uppercase">The Process</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-wider drop-shadow-lg">
+            <h2 className="text-xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-wider drop-shadow-lg">
               How It Works
             </h2>
           </motion.div>
@@ -90,14 +90,14 @@ export default function HowItWorks() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-white/90 max-w-sm text-base md:text-lg leading-relaxed"
+            className="text-white/90 max-w-sm text-sm md:text-lg leading-relaxed"
           >
             Four steps between you and the ultimate collector's experience. We handle the curation; you enjoy the thrill.
           </motion.p>
         </div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-6 lg:gap-8">
           {steps.map((step, idx) => (
             <motion.div
               key={step.id}
@@ -107,7 +107,7 @@ export default function HowItWorks() {
               transition={{ duration: 0.5, delay: idx * 0.15 }}
               onMouseEnter={() => setHoveredIndex(idx)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className={`group relative p-6 sm:p-8 lg:p-10 rounded-[2rem] bg-[#0a1628]/80 backdrop-blur-xl border-2 border-white/5 transition-all duration-500 hover:bg-[#0c1a30]/80 overflow-hidden ${step.border}`}
+              className={`group relative p-3 sm:p-8 lg:p-10 rounded-[1rem] sm:rounded-[2rem] bg-[#0a1628]/80 backdrop-blur-xl border-2 border-white/5 transition-all duration-500 hover:bg-[#0c1a30]/80 overflow-hidden ${step.border}`}
             >
               {/* Animated Gradient Background */}
               <div 
@@ -115,14 +115,14 @@ export default function HowItWorks() {
               />
 
               {/* Step Number Watermark */}
-              <div className="absolute -top-6 -right-6 text-[150px] font-black text-white/[0.02] group-hover:text-white/[0.04] transition-colors duration-500 select-none pointer-events-none">
+              <div className="absolute -top-6 -right-6 text-[100px] font-black text-white/[0.02] group-hover:text-white/[0.04] transition-colors duration-500 select-none pointer-events-none">
                 {step.id}
               </div>
 
               {/* Icon Container */}
-              <div className="relative mb-8 sm:mb-12">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#060e1b] border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-xl">
-                  <step.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white group-hover:text-[#c9a84c] transition-colors duration-500" strokeWidth={1.5} />
+              <div className="relative mb-4 sm:mb-12">
+                <div className="w-10 h-10 sm:w-20 sm:h-20 rounded-lg sm:rounded-2xl bg-[#060e1b] border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-xl">
+                  <step.icon className="w-5 h-5 sm:w-10 sm:h-10 text-white group-hover:text-[#c9a84c] transition-colors duration-500" strokeWidth={1.5} />
                 </div>
                 
                 {/* Connecting Line (Only visible on Desktop, except last item) */}
@@ -139,17 +139,17 @@ export default function HowItWorks() {
 
               {/* Content */}
               <div className="relative z-10">
-                <h3 className="text-xl sm:text-2xl font-black text-white mb-3 sm:mb-4 tracking-wide group-hover:text-[#c9a84c] transition-colors duration-300">
+                <h3 className="text-sm sm:text-2xl font-black text-white mb-1 sm:mb-4 tracking-wide group-hover:text-[#c9a84c] transition-colors duration-300">
                   {step.title}
                 </h3>
-                <p className="text-white/90 leading-relaxed text-sm sm:text-base">
+                <p className="text-white/90 leading-relaxed text-[10px] sm:text-base">
                   {step.desc}
                 </p>
               </div>
 
               {/* Bottom Interactive Arrow */}
-              <div className="absolute bottom-10 right-10 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
-                <MoveRight className="w-6 h-6 text-[#c9a84c]" />
+              <div className="absolute bottom-6 right-6 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
+                <MoveRight className="w-5 h-5 text-[#c9a84c]" />
               </div>
             </motion.div>
           ))}

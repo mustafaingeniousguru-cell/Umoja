@@ -70,7 +70,7 @@ export default function Header() {
               alt="Umoja Treasure Co."
               width={96}
               height={96}
-              className="rounded-full group-hover:opacity-80 transition-opacity w-12 h-12 sm:w-16 sm:h-16 lg:w-24 lg:h-24"
+              className="rounded-full group-hover:opacity-80 transition-opacity w-12 h-12 sm:w-16 sm:h-16 lg:w-24 lg:h-24 object-contain"
             />
           </a>
 
