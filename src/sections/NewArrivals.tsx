@@ -90,7 +90,7 @@ function ProductCard({
         className="group relative rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer border-2 sm:border-[4px] border-[#c9a84c]/20 hover:border-[#c9a84c]/80 transition-colors duration-500 bg-[#060e1b]/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.8)]"
       >
         {/* Image */}
-        <div className="relative aspect-square sm:aspect-[3/4] overflow-hidden p-2 sm:p-4">
+        <div className="relative aspect-square overflow-hidden p-2 sm:p-3">
           <div
             className="absolute inset-2 sm:inset-4 bg-contain bg-no-repeat bg-center group-hover:scale-110 transition-transform duration-700"
             style={{ backgroundImage: `url("${product.image}")` }}
@@ -122,7 +122,7 @@ function ProductCard({
         </div>
 
         {/* Info */}
-        <div className="p-2 sm:p-6 relative z-20 bg-[#060e1b]/80">
+        <div className="p-2 sm:p-4 relative z-20 bg-[#060e1b]/80">
           <h3 className="text-[10px] sm:text-lg font-black text-white mb-1 sm:mb-2 uppercase tracking-wide group-hover:text-[#c9a84c] transition-colors line-clamp-2 leading-snug">
             {product.name}
           </h3>
